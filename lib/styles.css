@@ -8,7 +8,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Core Styles */
 html{ font-size:100%; overflow: hidden; }
-body { font-size: 62.5%; line-height: 1.5; font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif; color: #333; }
+body { font-size: 62.5%; line-height: 1.5; font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif; background: #333; }
 input, select, textarea { font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif; font-size: 1em; }
 :focus { outline: 1px; }
 strong{ font-weight:bold; }
@@ -30,13 +30,25 @@ a:link, a:visited, a:active { color: #3c5dc9; text-decoration: underline; }
 a:hover { color: #3c5dc9; text-decoration:none; }
 
 /* Slider App Styles */
-section { padding: 20px 30px 30px; display: none; }
+section { padding: 0px; display: none; background: #f5f6f6; }
 #toolbar { color: #000; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5); font-family: "Lucida Grande"; padding: 1px 10px; overflow:hidden; z-index: 10000; }
 .toolbar-background { background: #E6E6E6; /* ie fallback */ background: rgba(230, 230, 230, 0.9); -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.25); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.25); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.25);
   -webkit-transition: background 300ms linear; }
 #toolbar h1 { float: left; font-size: 18px;  line-height: 32px; }
 header { position: absolute; z-index: 2; top: 0; left: 0; right:0; }
 footer { position: absolute; z-index: 2; bottom: 0; left: 0; right:0; }
+
+/* Vertically and horizontally center the slides */
+#content{ display:table; overflow:hidden; margin:0px auto; }
+*:first-child+html #content { position:relative; }/*ie7*/
+* html #content{ position:relative; }/*ie6*/
+#deck{ display:table-cell; vertical-align: middle; }
+*:first-child+html #deck{ position:absolute; top:50%; }/*ie7*/
+* html #deck{ position:absolute; top:50%; }/*ie6*/
+*:first-child+html section{ position:relative; top:-50%; }/*ie7*/
+* html section{ position:relative; top:-50%; }/*ie6*/
+html,body{ height:100%; }
+#content{ height:100%; width:465px; }
 
 .slide-selected { display: block; }
 .action, .action-on  { display: none; }
