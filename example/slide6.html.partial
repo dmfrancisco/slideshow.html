@@ -1,0 +1,12 @@
+<section>
+  <hgroup>
+    <h1>Other details</h1>
+    <h2>Small stuff</h2>
+  </hgroup>
+  <p>The hash updates with each slide.</p>
+  <p>The slideshow itself has 3 dependencies: jQuery, htmlSlides.js, and a small stylesheet.</p>
+  <p>The slide script has one option, the option to hide the toolbar at the top:</p>
+  <pre>
+htmlSlides.init({ toolbar: true });
+  </pre>
+</section>

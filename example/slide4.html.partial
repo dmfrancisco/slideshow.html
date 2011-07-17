@@ -1,0 +1,17 @@
+<section>
+  <hgroup>
+    <h1>Building slides</h1>
+    <h2>It's easy</h2>
+  </hgroup>
+  <p>Each slide goes within a <code>section</code> element, like this:</p>
+  <pre>
+&lt;section&gt;
+      &lt;hgroup&gt;
+          &lt;h1&gt;Your heading&lt;/h1&gt;
+          &lt;h2&gt;Your subheading&lt;/h2&gt;
+      &lt;/hgroup&gt;
+      &lt;p&gt;All your slide content...&lt;/p&gt;
+&lt;/section&gt;
+  </pre>
+  <p>You don't have to worry about numbering the slides. The script will count the number of <code>section</code> elements and give each one a numbered ID on page load.</p>
+</section>
