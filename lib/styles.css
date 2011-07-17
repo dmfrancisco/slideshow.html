@@ -30,9 +30,14 @@ a:link, a:visited, a:active { color: #3c5dc9; text-decoration: underline; }
 a:hover { color: #3c5dc9; text-decoration:none; }
 
 /* Slider App Styles */
-section { padding: 0 30px 30px; display: none; }
-header { color: #000; background-image: -moz-linear-gradient(top, #c5c5c5, #b0b0b0); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c5c5c5),color-stop(1, #b0b0b0)); background-image: -o-linear-gradient(top, #c5c5c5, #b0b0b0); border-top:1px solid #dcdcdc; border-bottom: 1px solid rgb(105, 105, 105); text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5); font-family: "Lucida Grande"; padding: 1px 10px; overflow:hidden; z-index: 10000; position: relative; }
-header h1 { float: left; font-size: 18px;  line-height: 32px;}
+section { padding: 20px 30px 30px; display: none; }
+#toolbar { color: #000; background-image: -moz-linear-gradient(top, #c5c5c5, #b0b0b0); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c5c5c5),color-stop(1, #b0b0b0)); background-image: -o-linear-gradient(top, #c5c5c5, #b0b0b0); text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5); font-family: "Lucida Grande"; padding: 1px 10px; overflow:hidden; z-index: 10000; }
+#toolbar h1 { float: left; font-size: 18px;  line-height: 32px; }
+header { position: absolute; z-index: 2; top: 0; left: 0; right:0;
+  border-top:1px solid #dcdcdc; border-bottom: 1px solid rgb(105, 105, 105); }
+footer { position: absolute; z-index: 2; bottom: 0; left: 0; right:0;
+  border-bottom:1px solid #dcdcdc; border-top: 1px solid rgb(105, 105, 105); }
+
 .slide-selected { display: block; }
 .action, .action-on  { display: none; }
 
