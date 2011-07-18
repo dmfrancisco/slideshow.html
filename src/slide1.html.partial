@@ -1,30 +1,30 @@
 <div class="slide-body">
-  <h1>your title</h1>
-  <h2>and a <em>small</em> description</h2>
+  <h1>yahpa</h1>
+  <h2><em>yet another</em><br>HTML5 Presentation Assembler</h2>
 </div>
 
 <style>
   #slide1 {
     background: url('<%= @root %>/images/bgd.png') repeat;
-    text-align: right;
+  }
+  #slide1 .slide-body {
+    text-align: center;
+    padding-top: 100px;
   }
   #slide1 h1 {
-    position: relative;
-    top: 120px;
-    font-family: 'Rockwell';
-    font-size: 132pt;
-    letter-spacing: -1px;
+    font-family: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-size: 162pt;
+    letter-spacing: -3px;
+    border-bottom: 10px dotted black;
+    display: inline;
   }
   #slide1 h2 {
-    position: relative;
-    top: 90px;
-    right: 5px;
-    font-family: 'Myriad Pro';
-    font-size: 42pt;
-    line-height: 44pt;
+    padding-top: 70px;
+    font-family: Geneva,'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-size: 30pt;
   }
   #slide1 h2 em {
-    font-family: 'Baskerville';
-    font-size: 46pt;
+    font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-size: 38pt;
   }
 </style>
