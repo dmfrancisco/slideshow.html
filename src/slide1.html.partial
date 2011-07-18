@@ -1,11 +1,11 @@
 <div class="slide-body">
-  <h1>escrito</h1>
-  <h2>collaborative writing<br><em>with</em> Markdown <em>&amp;</em> Textile</h2>
+  <h1>your title</h1>
+  <h2>and a <em>small</em> description</h2>
 </div>
 
 <style>
   #slide1 {
-    background: url('presentation/images/bgd.png') repeat;
+    background: url('src/images/bgd.png') repeat;
     text-align: right;
   }
   #slide1 h1 {
@@ -13,6 +13,7 @@
     top: 120px;
     font-family: 'Rockwell';
     font-size: 132pt;
+    letter-spacing: -1px;
   }
   #slide1 h2 {
     position: relative;
@@ -24,6 +25,6 @@
   }
   #slide1 h2 em {
     font-family: 'Baskerville';
-    font-size: 40pt;
+    font-size: 46pt;
   }
 </style>

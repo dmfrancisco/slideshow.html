@@ -1,6 +1,6 @@
 # Do "gem install watchr --source=http://gemcutter.org"
 # Run "watchr autobuild.watchr"
 
-watch('presentation/.*') do
-  system "rake source=presentation"
+watch('src/.*') do
+  system "rake build"
 end

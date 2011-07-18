@@ -28,7 +28,7 @@
 
 require 'erb'
 
-SRCDIR = ENV['source'] || ENV['s'] || 'presentation'
+SRCDIR = ENV['source'] || ENV['s'] || 'src'
 $partials = 0
 
 def write_output( filename, result )
