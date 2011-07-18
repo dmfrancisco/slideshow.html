@@ -23,11 +23,10 @@
 # THE SOFTWARE.
 
 #
-# You should:
-#   gem install rack
-#   gem install watchr --source=http://gemcutter.org
+# First install the dependencies (it may take some minutes):
+#   gem install watchr
 #   gem install thin
-# Run:
+# Then execute the following command:
 #   ruby watch [options]
 #
 require 'optparse'
@@ -38,9 +37,9 @@ require 'rake'
 
 # Default options
 $options = {
-  source: 'src',
-  port: 6543,
-  binding: "0.0.0.0"
+  :source => 'src',
+  :port => 6543,
+  :binding => "0.0.0.0"
 }
 $partials = 0
 
@@ -148,8 +147,8 @@ Options::parse!
 
 # Merge some required defaults
 $options.merge!({
-  root: Dir.pwd,
-  watched_files: "#{$options[:source]}/.*",
+  :root => Dir.pwd,
+  :watched_files => "#{$options[:source]}/.*",
 })
 
 # Simpler way of calling the "partial" method from views
