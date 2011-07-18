@@ -19,7 +19,9 @@
   <div id="content">
     <div id="deck">
       <% 7.times do |i|%>
-        <%= partial "slide#{i+1}.html" %>
+        <section>
+          <%= partial "slide#{i+1}.html" %>
+        </section>
       <% end %>
     </div>
   </div>

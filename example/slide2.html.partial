@@ -1,4 +1,4 @@
-<section>
+<div class="slide-body">
   <hgroup>
     <h1>Intraslide animation</h1>
     <h2>I'm calling these "actions"</h2>
@@ -13,4 +13,4 @@
     <li class="action">Yet another bullet point</li>
     <li class="action">You get the idea</li>
   </ul>
-</section>
+</div>

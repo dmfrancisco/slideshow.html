@@ -1,6 +1,7 @@
 #
 # Made by Ryan Funduk (http://ryanfunduk.com/simple-partials/)
 # Run "rake source=<name of the folder with the slides>"
+# For example, rake source=example
 #
 
 # The MIT License

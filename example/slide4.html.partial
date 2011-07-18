@@ -1,4 +1,4 @@
-<section>
+<div class="slide-body">
   <hgroup>
     <h1>Building slides</h1>
     <h2>It's easy</h2>
@@ -14,4 +14,4 @@
 &lt;/section&gt;
   </pre>
   <p>You don't have to worry about numbering the slides. The script will count the number of <code>section</code> elements and give each one a numbered ID on page load.</p>
-</section>
+</div>

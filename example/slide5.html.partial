@@ -1,6 +1,6 @@
-<section>
+<div class="slide-body">
   <hgroup>
     <h1>Plays well with images</h1>
   </hgroup>
   <img src="example/images/best-stegosaurus.png" alt="The Best Dinosaur" />
-</section>
+</div>

@@ -9,3 +9,4 @@
 #deck h1 { font-family: 'ChunkFiveRegular', Arial; font-size:50px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
 #deck h2 { font-family: 'ChunkFiveRegular', Arial; font-size: 30px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
 #deck p, #deck li { font-family: Arial; font-size:20px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
+.slide-body { padding: 30px 40px; }

@@ -1,4 +1,4 @@
-<section>
+<div class="slide-body">
   <hgroup>
     <h1>Other details</h1>
     <h2>Small stuff</h2>
@@ -9,4 +9,4 @@
   <pre>
 htmlSlides.init({ toolbar: true });
   </pre>
-</section>
+</div>
