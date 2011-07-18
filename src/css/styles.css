@@ -1,12 +1,22 @@
-@font-face {
-	font-family: 'ChunkFiveRegular';
-	src: url('../fonts/Chunkfive-webfont.eot');
-	src: local('☺'), url('../fonts/Chunkfive-webfont.woff') format('woff'), url('../fonts/Chunkfive-webfont.ttf') format('truetype'), url('../fonts/Chunkfive-webfont.svg#webfont') format('svg');
-	font-weight: normal;
-	font-style: normal;
+.slide-body {
+    padding: 30px 40px;
 }
-
-#deck h1 { font-family: 'ChunkFiveRegular', Arial; font-size:50px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
-#deck h2 { font-family: 'ChunkFiveRegular', Arial; font-size: 30px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
-#deck p, #deck li { font-family: Arial; font-size:20px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
-.slide-body { padding: 30px 40px; }
+#deck {
+    font-family: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+}
+#deck h1 {
+    font-size: 55px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+#deck h2 {
+    font-size: 35px;
+    padding-bottom: 45px;
+}
+#deck p, #deck li {
+    font-size: 20px;
+}
+#deck ul li {
+  list-style-type: square;
+}

@@ -12,7 +12,6 @@
     padding-top: 100px;
   }
   #slide1 h1 {
-    font-family: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     font-size: 162pt;
     letter-spacing: -3px;
     border-bottom: 10px dotted black;
@@ -20,11 +19,14 @@
   }
   #slide1 h2 {
     padding-top: 70px;
-    font-family: Geneva,'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     font-size: 30pt;
   }
   #slide1 h2 em {
     font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     font-size: 38pt;
+  }
+  nav.slide1 {
+    color: black;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
   }
 </style>
