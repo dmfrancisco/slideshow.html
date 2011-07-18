@@ -5,7 +5,7 @@
 
 <style>
   #slide1 {
-    background: url('src/images/bgd.png') repeat;
+    background: url('<%= @root %>/images/bgd.png') repeat;
     text-align: right;
   }
   #slide1 h1 {

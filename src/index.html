@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="lib/styles.css" />
 
   <!-- These are the styles you'll add to make the slides look great -->
-  <link rel="stylesheet" href="src/css/styles.css" />
+  <link rel="stylesheet" href="<%= @root %>/css/styles.css" />
 
   <title>Example Slideshow</title>
 </head>
 <body>
   <div id="content">
     <div id="deck">
-      <% 7.times do |i|%>
+      <% 7.times do |i| %>
         <section>
           <%= partial "slide#{i+1}.html" %>
         </section>

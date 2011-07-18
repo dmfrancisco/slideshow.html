@@ -42,12 +42,13 @@ $options = {
   port: 6543,
   binding: "0.0.0.0"
 }
+$partials = 0
 
-#
-# This module was made by Ryan Funduk (http://ryanfunduk.com/simple-partials/)
-# Released under the MIT license
-#
+
 module Builder
+  # This module is based on a blog post by Ryan Funduk
+  # To see the original source visit http://ryanfunduk.com/simple-partials/
+
   def self.write_output(filename, result)
     ext = filename.split('.').last
 
@@ -72,12 +73,13 @@ module Builder
       $partials += 1
       puts "LOADED    : #{name}.partial"
       f = File.open(filename, 'rb')
-      content = f.read.chomp
+      # _partial_ is the var where the result is stored, since we're inside a ERB.new already!
+      page = ERB.new(f.read, nil, nil, '_partial_')
       f.close
     else
       puts "ERROR     : #{filename}"
     end
-    content
+    page.result
   end
 
   # Build the compiled html file that includes the layout and all partials
@@ -152,6 +154,7 @@ $options.merge!({
 
 # Simpler way of calling the "partial" method from views
 define_singleton_method(:partial) { |name| Builder::partial(name) }
+@root = $options[:source]
 
 # Check if the specified options are valid
 exit unless Options::valid_options?
@@ -159,6 +162,7 @@ exit unless Options::valid_options?
 # Launch the watcher
 Thread.new do
   script = Watchr::Script.new
+  Builder::build
   script.watch $options[:watched_files] do
     Builder::build
   end
