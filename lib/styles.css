@@ -64,7 +64,8 @@ section {
     z-index: 10000;
 }
 .toolbar-background {
-    background: black; /* ie fallback */ background: rgba(0, 0, 0, 0.7);
+    background: black; /* ie fallback */
+    background: rgba(0, 0, 0, 0.7);
     -webkit-transition: background 300ms linear;
 }
 .toolbar-background-hidden {
@@ -94,13 +95,13 @@ footer {
 #content{ display:table; overflow:hidden; margin:0px auto; }
 *:first-child+html #content { position:relative; }/*ie7*/
 * html #content{ position:relative; }/*ie6*/
-#deck{ display:table-cell; vertical-align: middle; }
+#deck{ display:table-cell; vertical-align: middle; overflow: visible; }
 *:first-child+html #deck{ position:absolute; top:50%; }/*ie7*/
 * html #deck{ position:absolute; top:50%; }/*ie6*/
 *:first-child+html section{ position:relative; top:-50%; }/*ie7*/
 * html section{ position:relative; top:-50%; }/*ie6*/
 html,body{ height:100%; }
-#content{ height:100%; width:465px; }
+#content{ height:100%; width:465px; overflow: visible; }
 
 .slide-selected {
     display: block;
