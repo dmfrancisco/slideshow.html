@@ -1,7 +1,7 @@
 #
 # Made by Ryan Funduk (http://ryanfunduk.com/simple-partials/)
 # Run "rake source=<name of the folder with the slides>"
-# For example, rake source=example
+# For example, "rake source=presentation" or even just "rake"
 #
 
 # The MIT License
@@ -28,7 +28,7 @@
 
 require 'erb'
 
-SRCDIR = ENV['source'] || ENV['s'] || 'source'
+SRCDIR = ENV['source'] || ENV['s'] || 'presentation'
 $partials = 0
 
 def write_output( filename, result )

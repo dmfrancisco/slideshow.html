@@ -1,0 +1,29 @@
+<div class="slide-body">
+  <h1>escrito</h1>
+  <h2>collaborative writing<br><em>with</em> Markdown <em>&amp;</em> Textile</h2>
+</div>
+
+<style>
+  #slide1 {
+    background: url('presentation/images/bgd.png') repeat;
+    text-align: right;
+  }
+  #slide1 h1 {
+    position: relative;
+    top: 120px;
+    font-family: 'Rockwell';
+    font-size: 132pt;
+  }
+  #slide1 h2 {
+    position: relative;
+    top: 90px;
+    right: 5px;
+    font-family: 'Myriad Pro';
+    font-size: 42pt;
+    line-height: 44pt;
+  }
+  #slide1 h2 em {
+    font-family: 'Baskerville';
+    font-size: 40pt;
+  }
+</style>
