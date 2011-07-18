@@ -58,6 +58,7 @@ def partial( name )
   end
 end
 
+# Build the compiled html file that includes the layout and all partials
 task :build do
   sources = FileList["#{SRCDIR}/*.*"].exclude( "#{SRCDIR}/*.partial" )
 
