@@ -1,0 +1,176 @@
+#!/usr/bin/env ruby
+
+# The MIT License
+#
+# Copyright (c) 2008 Ryan Funduk
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+#
+# You should:
+#   gem install rack
+#   gem install watchr --source=http://gemcutter.org
+#   gem install thin
+# Run:
+#   ruby watch [options]
+#
+require 'optparse'
+require 'watchr'
+require 'thin'
+require 'erb'
+require 'rake'
+
+# Default options
+$options = {
+  source: 'src',
+  port: 6543,
+  binding: "0.0.0.0"
+}
+
+#
+# This module was made by Ryan Funduk (http://ryanfunduk.com/simple-partials/)
+# Released under the MIT license
+#
+module Builder
+  def self.write_output(filename, result)
+    ext = filename.split('.').last
+
+    filename = filename.split '/'
+    filename.delete $options[:source]
+    filename.insert -2, ext unless ext == 'html'
+    filename = filename.join '/'
+
+    result.gsub! /V%/, '&lt;%'
+    result.gsub! /%V/, '%&gt;'
+
+    f = File.open(filename, 'wb')
+    f.write(result)
+    f.close
+    puts "WROTE     : #{filename}"
+  end
+
+  def self.partial(name)
+    filename = "#{$options[:source]}/#{name}.partial"
+
+    if File.exists? filename
+      $partials += 1
+      puts "LOADED    : #{name}.partial"
+      f = File.open(filename, 'rb')
+      content = f.read.chomp
+      f.close
+    else
+      puts "ERROR     : #{filename}"
+    end
+    content
+  end
+
+  # Build the compiled html file that includes the layout and all partials
+  def self.build
+    $partials = 0
+    sources = FileList["#{$options[:source]}/*.*"].exclude("#{$options[:source]}/*.partial")
+
+    sources.each do |source|
+      puts "\nCOMPILING : #{source}"
+      f = File.open(source, 'rb')
+      page = ERB.new(f.read)
+      f.close
+      write_output source, page.result
+    end
+
+    puts "\nDONE      : Compiled #{sources.size} sources w/ #{$partials} partials."
+  end
+end
+
+module Options
+  $optparse
+
+  # Check if the specified options are valid
+  def self.valid_options?
+    dir_exists = File.directory? $options[:source]
+    if !dir_exists and $options[:custom_source]
+      puts "Invalid directory for the --source option."
+    elsif !dir_exists
+      puts "Cannot find the slideshow folder. Please use the --source option."
+    end
+    dir_exists
+  end
+
+  def self.init
+    $optparse = OptionParser.new do |opts|
+      # Help
+      opts.on( '-h', '--help', 'Show this help message' ) do
+        puts opts
+        exit
+      end
+      # Slideshow folder
+      opts.on( '-s', '--source DIR', 'Creates a slideshow using the files on the specified folder' ) do |dir|
+        $options[:source] = dir
+        $options[:custom_source] = true
+      end
+      # Port number
+      opts.on( '-p', '--port PORT', 'Runs on the specified port' ) do |port|
+        $options[:port] = port
+      end
+      # Binding address
+      opts.on( '-b', '--binding IP', 'Binds to the specified ip' ) do |binding|
+        $options[:binding] = binding
+      end
+    end
+  end
+
+  # Parse the given command line parameters
+  def self.parse!
+    init unless $optparse
+    $optparse.parse!
+  end
+end
+
+# Parse the given command line parameters
+Options::parse!
+
+# Merge some required defaults
+$options.merge!({
+  root: Dir.pwd,
+  watched_files: "#{$options[:source]}/.*",
+})
+
+# Simpler way of calling the "partial" method from views
+define_singleton_method(:partial) { |name| Builder::partial(name) }
+
+# Check if the specified options are valid
+exit unless Options::valid_options?
+
+# Launch the watcher
+Thread.new do
+  script = Watchr::Script.new
+  script.watch $options[:watched_files] do
+    Builder::build
+  end
+  controller = Watchr::Controller.new(script, Watchr.handler.new)
+  controller.run
+end
+
+puts ">>> Watching #{$options[:root]}/#{$options[:watched_files]}"
+puts ">>> Check your slideshow at http://#{$options[:binding]}:#{$options[:port]}/index.html"
+puts ">>> Your slideshow will be built and refreshed automagically\n\n"
+
+# Run the thin server
+Thin::Server.start($options[:binding], $options[:port]) do
+  run Rack::Directory.new("#{$options[:root]}")
+end
