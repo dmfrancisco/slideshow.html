@@ -86,10 +86,12 @@ module Builder
       # The rand() was added in case partials contain partials themselves too
       page = ERB.new(f.read, nil, nil, "_partial_#{rand(2010)}") # TODO add collision detection
       f.close
+      result = page.result
     else
       puts "ERROR     : #{filename}"
+      result = ""
     end
-    page.result
+    result
   end
 
   # Build the compiled html file that includes the layout and all partials
