@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!--[if lt IE 9]>
   <script src="lib/html5shim.js"></script>
@@ -38,9 +39,10 @@
   </footer>
 
   <script src="lib/jquery-1.5.2.min.js"></script>
-  <script src="lib/live.js"></script>
   <script src="lib/jquery.jswipe-0.1.2.js"></script>
   <script src="lib/html-slides.js"></script>
+  <% if @live %><script src="lib/live.js"></script><% end %>
+
   <script>
     // Do our business when the DOM is ready for us
     $(function() {

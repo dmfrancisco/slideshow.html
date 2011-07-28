@@ -39,6 +39,7 @@ require 'rake'
 # Default options
 $options = {
   :source => 'src',
+  :live => true,
   :port => 6543,
   :binding => "0.0.0.0"
 }
@@ -125,6 +126,10 @@ module Options
         $options[:source] = dir
         $options[:custom_source] = true
       end
+      # Excluding live.js
+      opts.on( '-n', '--nolive', 'Excludes the live.js library' ) do
+        $options[:live] = false
+      end
       # Port number
       opts.on( '-p', '--port PORT', 'Runs on the specified port' ) do |port|
         $options[:port] = port
@@ -155,6 +160,7 @@ $options.merge!({
 # Simpler way of calling the "partial" method from views
 define_singleton_method(:partial) { |name| Builder::partial(name) }
 @root = $options[:source]
+@live = $options[:live]
 
 # Check if the specified options are valid
 exit unless Options::valid_options?
