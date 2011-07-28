@@ -83,7 +83,8 @@ module Builder
       puts "LOADED    : #{name}.partial"
       f = File.open(filename, 'rb')
       # _partial_ is the var where the result is stored, since we're inside a ERB.new already!
-      page = ERB.new(f.read, nil, nil, '_partial_')
+      # The rand() was added in case partials contain partials themselves too
+      page = ERB.new(f.read, nil, nil, "_partial_#{rand(2010)}") # TODO add collision detection
       f.close
     else
       puts "ERROR     : #{filename}"
@@ -204,6 +205,10 @@ define_singleton_method(:partial) { |name| Builder::partial(name) }
 # Check if the specified options are valid
 exit unless Options::valid_options?
 
+puts ">>> Watching #{$settings[:root]}/#{$settings[:watched_files]}"
+puts ">>> Check your slideshow at http://#{$settings[:binding]}:#{$settings[:port]}/index.html"
+puts ">>> Your slideshow will be built and refreshed automagically\n\n"
+
 # Launch the watcher
 Thread.new do
   script = Watchr::Script.new
@@ -214,10 +219,6 @@ Thread.new do
   controller = Watchr::Controller.new(script, Watchr.handler.new)
   controller.run
 end
-
-puts ">>> Watching #{$settings[:root]}/#{$settings[:watched_files]}"
-puts ">>> Check your slideshow at http://#{$settings[:binding]}:#{$settings[:port]}/index.html"
-puts ">>> Your slideshow will be built and refreshed automagically\n\n"
 
 # Run the thin server
 Thin::Server.start($settings[:binding], $settings[:port]) do
