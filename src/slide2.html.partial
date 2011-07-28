@@ -1,16 +1,13 @@
 <div class="slide-body">
-  <hgroup>
-    <h1>Intraslide animation</h1>
-    <h2>I'm calling these "actions"</h2>
-  </hgroup>
-    <p>You can hide/reveal content within the slides by giving something a class of "action". Actions are revealed in the order in which they occur in the HTML. Advancing to the next slide will first reveal actions on the page if they exist.</p>
-  <pre>
-&lt;p class=&quot;action&quot;&gt;This will be hidden when the slide loads&lt;/p&gt;
-  </pre>
+  <h1>What is slideshow.html?</h1>
+
+  <p><strong>slideshow.html</strong> is the resulting file of running <code>./watch</code> on your terminal.</p>
+  <p><strong>watch</strong> is a ruby script that will monitor a source folder.</p>
+  <p>This source folder contains:</p>
   <ul>
-    <li class="action">Bullet point</li>
-    <li class="action">Another bullet point</li>
-    <li class="action">Yet another bullet point</li>
-    <li class="action">You get the idea</li>
+    <li class="action">A master.html file where you set the title and other configurations</li>
+    <li class="action">One slide&lt;N&gt;.html.partial file per slide</li>
+    <li class="action">CSS, JavaScript, images and other files you may want to add to your presentation</li>
   </ul>
+  <p class="action"><strong>slideshow.html</strong> is just a compiled file with all this information.</p>
 </div>

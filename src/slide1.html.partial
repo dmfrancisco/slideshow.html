@@ -1,5 +1,5 @@
 <div class="slide-body">
-  <h1>yahpa</h1>
+  <h1>slideshow.html</h1>
   <h2><em>yet another</em><br>HTML5 Presentation Assembler</h2>
 </div>
 
@@ -9,10 +9,10 @@
   }
   #slide1 .slide-body {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 170px;
   }
   #slide1 h1 {
-    font-size: 162pt;
+    font-size: 82pt;
     letter-spacing: -3px;
     border-bottom: 10px dotted black;
     display: inline;

@@ -8,15 +8,19 @@
 #deck h1 {
     font-size: 55px;
     font-weight: bold;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 #deck h2 {
     font-size: 35px;
     padding-bottom: 45px;
 }
 #deck p, #deck li {
-    font-size: 20px;
+    font-size: 30px;
+    margin: 20px 0 20px 0;
+}
+#deck ul {
+    margin-left: 60px;
 }
 #deck ul li {
-  list-style-type: square;
+    list-style-type: square;
 }

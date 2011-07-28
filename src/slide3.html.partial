@@ -1,12 +1,19 @@
 <div class="slide-body">
-  <hgroup>
-    <h1>Custom events</h1>
-    <h2>These may or may not be useful for you</h2>
-  </hgroup>
-  <p>When a new slide is loaded, a "newSlide" event is fired. (Take a look at your console.)</p>
-  <p>There's also an event triggered when a new "action" is revealed.</p>
-  <pre>
-//Example usage
-$(&#x27;html&#x27;).bind(&#x27;newSlide&#x27;, function(e,id) { console.log(id) });
-  </pre>
+  <h1>What is slideshow.html?</h1>
+
+  <p>So, you need Ruby to create your presentation,</p>
+  <p style="text-align:right" class="action">but you do not to present or publish it.</p>
+  <div class="gap"></div>
+  <p class="action">Everytime you make a change in one of your slides, <br>the <strong>slideshow.html</strong> file gets updated.</p>
+  <div class="gap"></div>
+  <p class="action">It even automatically refreshes in your browser.</p>
 </div>
+
+<style>
+  #slide3 p {
+    font-size: 35px;
+  }
+  #slide3 .gap {
+    height: 35px;
+  }
+</style>

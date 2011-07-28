@@ -14,12 +14,12 @@
   <!-- These are the styles you'll add to make the slides look great -->
   <link rel="stylesheet" href="<%= @root %>/css/styles.css" />
 
-  <title>Example Slideshow</title>
+  <title>slideshow.html</title>
 </head>
 <body>
   <div id="content">
     <div id="deck">
-      <% 7.times do |i| %>
+      <% 4.times do |i| %>
         <section>
           <%= partial "slide#{i+1}.html" %>
         </section>
@@ -28,7 +28,7 @@
   </div>
 
   <footer id="toolbar" class="hide-background">
-    <h1 class="hide">Optional title</h1>
+    <h1 class="hide">An example slideshow</h1>
     <nav>
       <ul>
         <li><button id="prev-btn" title="Previous slide" class="hide">Previous Slide</button></li>
