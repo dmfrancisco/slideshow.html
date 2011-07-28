@@ -37,7 +37,7 @@ require 'erb'
 require 'rake'
 
 # Default options
-$options = {
+$settings = {
   :source => 'src',
   :master => 'master.html',
   :live => true,
@@ -54,14 +54,14 @@ module Builder
   # To see the original source visit http://ryanfunduk.com/simple-partials/
 
   def self.write_output(filename, result)
-    if $options[:output] && !$options[:multiple]
-      filename = $options[:output]
+    if $settings[:output] && !$settings[:multiple]
+      filename = $settings[:output]
     else
       # If there are N .html files in the source folder (excluding the partials), the result will be N html files
       ext = filename.split('.').last
 
       filename = filename.split '/'
-      filename.delete $options[:source]
+      filename.delete $settings[:source]
       filename.insert -2, ext unless ext == 'html'
       filename = filename.join '/'
 
@@ -76,7 +76,7 @@ module Builder
   end
 
   def self.partial(name)
-    filename = "#{$options[:source]}/#{name}.partial"
+    filename = "#{$settings[:source]}/#{name}.partial"
 
     if File.exists? filename
       $partials += 1
@@ -95,11 +95,11 @@ module Builder
   def self.build
     $partials = 0
 
-    if !$options[:multiple]
+    if !$settings[:multiple]
       # If the result should be only one html file, then only one .html should exist
-      sources = ["#{$options[:source]}/#{$options[:master]}"]
+      sources = ["#{$settings[:source]}/#{$settings[:master]}"]
     else
-      sources = FileList["#{$options[:source]}/*.*"].exclude("#{$options[:source]}/*.partial")
+      sources = FileList["#{$settings[:source]}/*.*"].exclude("#{$settings[:source]}/*.partial")
     end
 
     sources.each do |source|
@@ -119,20 +119,20 @@ module Options
 
   # Check if the specified options are valid
   def self.valid_options?
-    dir_exists = File.directory? $options[:source]
-    if !dir_exists && $options[:custom_source]
+    dir_exists = File.directory? $settings[:source]
+    if !dir_exists && $settings[:custom_source]
       puts "Invalid directory specified with the --source option."
     elsif !dir_exists
       puts "Could not find the slideshow folder." \
-           "Please use the --source option if you want to use a custom value (default is '#{$options[:source]}')."
+           "Please use the --source option if you want to use a custom value (default is '#{$settings[:source]}')."
     end
 
-    master_exists = File.exists? "#{$options[:source]}/#{$options[:master]}"
-    if !master_exists && $options[:custom_master] && !$options[:multiple]
+    master_exists = File.exists? "#{$settings[:source]}/#{$settings[:master]}"
+    if !master_exists && $settings[:custom_master] && !$settings[:multiple]
       puts "Invalid file name for the master slide specified with the --input option."
-    elsif !master_exists && !$options[:multiple]
+    elsif !master_exists && !$settings[:multiple]
       puts "Could not find the master slide file. " \
-           "Please use the --input option if you want to use a custom value (default is '#{$options[:master]}')."
+           "Please use the --input option if you want to use a custom value (default is '#{$settings[:master]}')."
     else
       master_exists = true # It doesn't really exist, but we'll handle several master slides
     end
@@ -149,33 +149,33 @@ module Options
       end
       # Slideshow folder
       opts.on( '-s', '--source DIR', 'Creates a slideshow using the files on the specified folder' ) do |dir|
-        $options[:source] = dir
-        $options[:custom_source] = true # This var is only used to print a better error message
+        $settings[:source] = dir
+        $settings[:custom_source] = true # This var is only used to print a better error message
       end
       # Name of the resulting html file
       opts.on( '-o', '--output FILENAME', 'Name of the resulting html file' ) do |filename|
-        $options[:output] = filename
+        $settings[:output] = filename
       end
       # Name of the master slide html file
       opts.on( '-i', '--input FILENAME', 'Name of the master slide file' ) do |filename|
-        $options[:master] = filename
-        $options[:custom_master] = true # This var is only used to print a better error message
+        $settings[:master] = filename
+        $settings[:custom_master] = true # This var is only used to print a better error message
       end
       # Allow several slideshows inside the source folder
       opts.on( '-m', '--multiple', 'Allow several slideshows inside the source folder' ) do
-        $options[:multiple] = true
+        $settings[:multiple] = true
       end
       # Excluding live.js
       opts.on( '-n', '--nolive', 'Excludes the live.js library' ) do
-        $options[:live] = false
+        $settings[:live] = false
       end
       # Port number
       opts.on( '-p', '--port PORT', 'Runs on the specified port' ) do |port|
-        $options[:port] = port
+        $settings[:port] = port
       end
       # Binding address
       opts.on( '-b', '--binding IP', 'Binds to the specified ip' ) do |binding|
-        $options[:binding] = binding
+        $settings[:binding] = binding
       end
     end
   end
@@ -191,15 +191,15 @@ end
 Options::parse!
 
 # Merge some required defaults
-$options.merge!({
+$settings.merge!({
   :root => Dir.pwd,
-  :watched_files => "#{$options[:source]}/.*",
+  :watched_files => "#{$settings[:source]}/.*",
 })
 
 # Simpler way of calling the "partial" method from views
 define_singleton_method(:partial) { |name| Builder::partial(name) }
-@root = $options[:source]
-@live = $options[:live]
+@root = $settings[:source]
+@live = $settings[:live]
 
 # Check if the specified options are valid
 exit unless Options::valid_options?
@@ -208,18 +208,18 @@ exit unless Options::valid_options?
 Thread.new do
   script = Watchr::Script.new
   Builder::build
-  script.watch $options[:watched_files] do
+  script.watch $settings[:watched_files] do
     Builder::build
   end
   controller = Watchr::Controller.new(script, Watchr.handler.new)
   controller.run
 end
 
-puts ">>> Watching #{$options[:root]}/#{$options[:watched_files]}"
-puts ">>> Check your slideshow at http://#{$options[:binding]}:#{$options[:port]}/index.html"
+puts ">>> Watching #{$settings[:root]}/#{$settings[:watched_files]}"
+puts ">>> Check your slideshow at http://#{$settings[:binding]}:#{$settings[:port]}/index.html"
 puts ">>> Your slideshow will be built and refreshed automagically\n\n"
 
 # Run the thin server
-Thin::Server.start($options[:binding], $options[:port]) do
-  run Rack::Directory.new("#{$options[:root]}")
+Thin::Server.start($settings[:binding], $settings[:port]) do
+  run Rack::Directory.new("#{$settings[:root]}")
 end
