@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -22,7 +22,7 @@
   <div id="container">
     <div id="deck">
       <% no = 1 %>
-      <% loop do %>
+      <% loop do # Loop until it can't find more slides %>
         <%= slide = partial "slide#{no}.html" %>
         <% break if slide.empty? %>
         <% no += 1 %>
@@ -30,10 +30,12 @@
     </div>
   </div>
 
+  <!-- You can change the class "bottom to "top" -->
   <header id="toolbar" class="bottom">
     <h1 class="hide">An example slideshow</h1>
     <nav>
       <ul>
+        <!-- Add the class "hide" if you want an element to be visible only on mouseover -->
         <li class="hide">
           <a id="prev-btn" title="Previous slide">&#9664;</a>
         </li>
@@ -66,7 +68,12 @@
             break;
         }
       });
+
+      // Init!
       htmlSlides.init();
+
+      // You can specify the width to height ratio like this:
+      // htmlSlides.init({ slideWidth: 1280, slideHeight: 800 });
     });
   </script>
 </body>

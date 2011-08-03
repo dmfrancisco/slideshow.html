@@ -1,42 +1,62 @@
-# HTML Slideshow
-## Lightweight HTML5-based slideshow
-This is a small app for creating slideshow presentations with HTML and CSS. It doesn't do fancy transitions and all that, but it lets you write stuff in HTML/CSS and it gets you from one slide to the next. You can also reveal content with intraslide animations (like Keynote's Builds, but without the animation effects). And, if you're a Javascripter and need to trigger scrolling T-Rexes or other dinosaur animations, you can bind to events that fire with each new slide.
+![slideshow.html](http://dmfranc.com/assets/slideshow.png)
 
-## Using it
-The example slideshow contains instructions. Basically, you build your slides as HTML5 `section` elements like this:
+## Demonstration
+[View the demo](http://dmfrancisco.github.com/slideshow.html/)
 
-```
-<section>
-  <hgroup>
-    <h1>Hello, interwebs explorer.</h1>
-    <h2>How to use this thing</h2>
-  </hgroup>
-  <p>Press the right arrow, down arrow, or spacebar to advance; press the left arrow or up arrow to move backward.</p>
-  <p>You can also click the left and right arrows in the control bar at the top.</p>
-</section>
-```
 
-To run Javascript for particular slides you can bind to the newSlide events like this: 
+## Dependencies and supported browsers
+
+Tested on Ruby 1.9.7 and 1.9.2.
+It works in the latests versions of Chrome, Safari and IE (9+).
+
+
+## Installation
+
+First install the dependencies (it may take some minutes):
 
 ```
-$('html').bind('newSlide', function(e, id) { 
-  switch(id) {
-    case 2:
-      console.log('This is the second slide.');;
-      break;
-    case 3:
-      console.log('Hello, third slide.');
-      break;
-  }
-});
+gem install watchr
+gem install thin
 ```
-## Changelog
-05/07/2011 - Added swipe support for touch devices
 
-05/01/2011 - Reorganized file structure
+Then execute the following command:
 
-## Demo
-[View the demo](http://www.ravelrumba.com/code/demos/html-slideshow/slideshow.html)
+```
+./watch
+```
 
-## Blog post
-[Read the blog post](http://www.ravelrumba.com/blog/html5-slideshow/)
+If you don't have execute permission, try:
+
+```
+ruby watch
+```
+
+
+# Usage
+
+The demo slideshow in the "slideshow" folder contains instructions to get you started.
+Everything inside the "slideshow" folder is specific to a presentation.
+However, what's inside the "lib" folder and the "watch" script shouldn't need to be modified.
+
+
+## Help
+
+For more information and additional options execute:
+
+```
+./watch --help
+```
+
+
+## Origin
+
+slideshow.html was based on the [HTML5 Slideshow](https://github.com/robflaherty/html-slideshow) project by Rob Flaherty. The code was extended and new features were added:
+
+* Dimensions and proportional slide resizing according to a specified ratio (for example, 1280x800)
+* Browser automatic refresh
+* Additional options (for example, hide the toolbar but keep the slide number visible)
+* Less.js support
+* The ruby script which offers support for partials and automated build
+
+
+2011 David Francisco, released under the MIT license.
