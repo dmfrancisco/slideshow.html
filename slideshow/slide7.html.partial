@@ -1,7 +1,7 @@
 <section class="cover">
   <div class="stripes"></div>
 
-  <h1>thank you for watching</h2>
+  <h1>thank you for watching</h1>
 
   <style scoped>
     #slide7 h1 {

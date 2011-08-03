@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -47,7 +50,11 @@
         </li>
       </ul>
     </nav>
-  </footer>
+  </header>
+
+  <noscript>
+    <div class="warning">You should enable javascript to access this website.</div>
+  </noscript>
 
   <script src="lib/jquery-1.5.2.min.js"></script>
   <script src="lib/jquery.jswipe-0.1.2.js"></script>
@@ -55,26 +62,35 @@
   <% if @live %><script src="lib/live.js"></script><% end %>
 
   <script>
-    // Do our business when the DOM is ready for us
-    $(function() {
-      // You can trigger Javascript based on the slide number like this:
-      $('html').bind('newSlide', function(e, id) {
-        switch(id) {
-          case 2:
-            console.log('This is the second slide.');;
-            break;
-          case 3:
-            console.log('Hello, third slide.');
-            break;
-        }
-      });
+    // Block access from older browsers (you probably want to remove this; keep in mind that there're still some issues)
+    if ($("html").is('.ie6, .ie7, .ie8')) {
+        $("body").html("<div class='warning'>We are sorry but this website does not render properly in your browser" +
+              " for now. <br/>If possible, try to access it using a different browser, such as <a" +
+              " href='http://google.com/chrome/'>Google Chrome</a>, <a " +
+              " href='http://mozilla.com/firefox/'>Mozilla Firefox 4+</a> or <a " +
+              " href='http://beautyoftheweb.com/'>Internet Explorer 9+</a>.<br/></div>");
+    } else {
+        // Do our business when the DOM is ready for us
+        $(function() {
+          // You can trigger Javascript based on the slide number like this:
+          $('html').bind('newSlide', function(e, id) {
+            switch(id) {
+              case 2:
+                console.log('This is the second slide.');;
+                break;
+              case 3:
+                console.log('Hello, third slide.');
+                break;
+            }
+          });
 
-      // Init!
-      htmlSlides.init();
+          // Init!
+          htmlSlides.init();
 
-      // You can specify the width to height ratio like this:
-      // htmlSlides.init({ slideWidth: 1280, slideHeight: 800 });
-    });
+          // You can specify the width to height ratio like this:
+          // htmlSlides.init({ slideWidth: 1280, slideHeight: 800 });
+        });
+    }
   </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
       <strong>HTML5 Slideshow</strong>
       <span class="link"><a href="http://www.ravelrumba.com/blog/html5-slideshow/">goo.gl/CeD4Q</a></span>
       <br /><span class="serif"><em>by</em></span> Rob Flaherty
-      <img src="<%= @root %>/images/arrow-3.png" alt="" height="30px">
+      <img src="<%= @root %>/images/arrow-3.png" alt="" height="30">
       <span class="note">the main library used for slideshow.html</span>
     </p>
 
