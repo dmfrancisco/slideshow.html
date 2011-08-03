@@ -1,26 +1,108 @@
-.slide-body {
-    padding: 30px 40px;
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Maven+Pro:500|Crimson+Text:400italic|Calligraffitti);
+
+/* The same fonts as specified above, but intended for offline usage (optional) */
+@font-face {
+  font-family: 'Throw My Hands Up in the Air';
+  src: url('../fonts/ThrowMyHandsUpintheAir.ttf') format("truetype");
 }
-#deck {
-    font-family: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+@font-face {
+  font-family: 'Droid Sans';
+  src: url('../fonts/DroidSans-Regular.ttf') format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Maven Pro';
+  src: url('../fonts/MavenPro-Medium.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Crimson Text';
+  src: url('../fonts/CrimsonText-Italic.ttf') format("truetype");
+  font-style: italic;
+}
+
+/* Some styles specific for this example presentation */
+
+section {
+  font-family: 'Droid Sans', Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+  padding: 0;
 }
 #deck h1 {
-    font-size: 55px;
-    font-weight: bold;
-    padding-bottom: 25px;
+  font-size: 55px;
+  font-family: 'Maven Pro', Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, cursive;
+  letter-spacing: -3px;
+  padding: 20px 50px 20px 50px;
+  border-bottom: 2px dashed;
 }
 #deck h2 {
-    font-size: 35px;
-    padding-bottom: 45px;
+  font-size: 35px;
+  padding-bottom: 45px;
+}
+#deck .content {
+  padding: 30px 50px;
+}
+#deck .gap {
+  height: 15px;
 }
 #deck p, #deck li {
-    font-size: 30px;
-    margin: 20px 0 20px 0;
+  font-size: 35px;
+  margin: 20px 0 20px 0;
 }
 #deck ul {
-    margin-left: 60px;
+  margin-left: 70px;
 }
 #deck ul li {
-    list-style-type: square;
+  font-size: 30px;
+  list-style-type: square;
+}
+.dotted {
+  border-bottom: 1px dashed;
+}
+.cover {
+  background: #d6d5cf url('../images/bgd.png');
+  text-align: center;
+}
+.stripes {
+  background: url('../images/stripes.png') center top repeat-x;
+  width: 100%;
+  height: 10px;
+}
+.note {
+  color: #adaea7;
+  font-family: 'Throw My Hands Up in the Air', 'Calligraffitti', cursive;
+}
+.serif {
+  font-family: 'Crimson Text', 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+.important {
+  background: #d6d5cf;
+  padding: 0 10px 0 10px;
+  font-size: 40px;
+}
+mark, code, pre, .important {
+  border: 1px solid #C6C9CB;
+  box-shadow: 1px 1px 1px #d8d8d8;
+  -webkit-box-shadow: 1px 1px 1px #d8d8d8;
+  -moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+
+/* Highlighted text */
+
+mark {
+  background: #f0f0ef;
+  padding: 0 5px 0 5px;
+}
+
+/* Text selection */
+
+::-moz-selection {
+  background: #FFFF9E;
+  color: #111;
+  text-shadow: none;
+}
+::selection {
+  background: #FFFF9E;
+  color: #111;
+  text-shadow: none;
 }

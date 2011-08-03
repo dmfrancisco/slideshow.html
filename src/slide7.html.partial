@@ -1,0 +1,12 @@
+<section class="cover">
+  <div class="stripes"></div>
+
+  <h1>thank you for watching</h2>
+
+  <style scoped>
+    #slide7 h1 {
+      padding-top: 600px;
+      border: none;
+    }
+  </style>
+</section>

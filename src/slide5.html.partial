@@ -1,0 +1,35 @@
+<section>
+  <h1>In short</h1>
+
+  <div class="content">
+    <p style="text-align: center" class="action">
+      <span class="important">
+        Write your slides in <strong>HTML</strong> and style them with <strong>CSS</strong> (or <strong>Less</strong>)
+      </span>
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">The master slide and a directory called <code>./lib</code> contain all what's needed to:</p>
+    <ul>
+      <li class="action"><mark>convert your slides</mark> into a presentation</li>
+      <li class="action">
+        advance through the presentation with a <mark>mouse</mark>, <mark>keyboard</mark> or <mark>finger-swipe</mark>
+      </li>
+      <li class="action">render <mark>animations</mark> and <mark>handle window resizing</mark></li>
+    </ul>
+
+    <div class="gap"></div>
+
+    <p class="action note">(but you don't need to bother with that)</p>
+  </div>
+
+  <style scoped>
+    #slide5 .note {
+      text-align: center;
+    }
+    #slide5 .gap {
+      height: 30px;
+    }
+  </style>
+</section>

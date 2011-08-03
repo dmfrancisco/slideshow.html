@@ -1,0 +1,75 @@
+<section class="cover">
+  <div class="stripes"></div>
+
+  <h1>This wouldn’t be possible without the following Open Source projects</h1>
+
+  <div class="content">
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>HTML5 Slideshow</strong>
+      <span class="link"><a href="http://www.ravelrumba.com/blog/html5-slideshow/">goo.gl/CeD4Q</a></span>
+      <br /><span class="serif"><em>by</em></span> Rob Flaherty
+      <img src="<%= @root %>/images/arrow-3.png" alt="" height="30px">
+      <span class="note">the main library used for slideshow.html</span>
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>Live.js</strong>
+      <span class="link"><a href="http://livejs.com/">livejs.com</a></span><br />
+      <span class="serif"><em>by</em></span> Martin Kool
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>Watchr</strong>
+      <span class="link"><a href="http://rubygems.org/gems/watchr/">goo.gl/QQUUk</a></span><br />
+      <span class="serif"><em>by</em></span> Martin Aumont (and others)
+    </p>
+  </div>
+
+  <style scoped>
+    #slide8 h1 {
+      font-size: 40px;
+    }
+    #slide8.cover {
+      text-align: left;
+      vertical-align: middle;
+    }
+    #slide8 .serif {
+      padding-right: 10px;
+    }
+    #slide8 .link {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-left: 10px;
+      font: 20px Monaco, Consolas, "Lucida Console", monospace;
+      background: #F9C006;
+      text-shadow: none;
+
+      box-shadow: 1px 1px 1px #888;
+      -webkit-box-shadow: 1px 1px 1px #888;
+      -moz-box-shadow: 1px 1px 1px #888;
+
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+    }
+    #slide8 .link a,
+    #slide8 .link a:visited,
+    #slide8 .link a:hover {
+      color: #444;
+      text-decoration: none;
+    }
+    #slide8 .note {
+      color: #5d5d5d;
+    }
+    #slide8 img {
+      display: inline;
+    }
+  </style>
+</section>

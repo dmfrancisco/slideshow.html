@@ -1,0 +1,17 @@
+<section class="cover">
+  <div class="stripes"></div>
+
+  <h1><a href="http://slideshow.dmfranc.com/">slideshow.dmfranc.com</a></h2>
+
+  <style scoped>
+    #slide9 h1 {
+      padding-top: 600px;
+      border: none;
+    }
+    #slide9 a,
+    #slide9 a:visited,
+    #slide9 a:hover {
+      color: #000;
+    }
+  </style>
+</section>

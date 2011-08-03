@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="<%= @root %>/favicon.ico"/>
 
   <!--[if lt IE 9]>
   <script src="lib/html5shim.js"></script>
@@ -16,13 +17,12 @@
 
   <title>slideshow.html</title>
 </head>
+
 <body>
   <div id="content">
     <div id="deck">
-      <% 4.times do |i| %>
-        <section>
-          <%= partial "slide#{i+1}.html" %>
-        </section>
+      <% 9.times do |i| %>
+        <%= partial "slide#{i+1}.html" %>
       <% end %>
     </div>
   </div>
@@ -60,5 +60,5 @@
       htmlSlides.init();
     });
   </script>
-  </body>
+</body>
 </html>

@@ -43,7 +43,7 @@ $settings = {
   :live => true,
   :output => 'slideshow.html',
   :multiple => false,
-  :port => 6543,
+  :port => 7000,
   :binding => "0.0.0.0"
 }
 $partials = 0
@@ -72,7 +72,7 @@ module Builder
     f = File.open(filename, 'wb')
     f.write(result)
     f.close
-    puts "WROTE     : #{filename}"
+    puts "wrote     : #{filename}"
   end
 
   def self.partial(name)
@@ -80,7 +80,7 @@ module Builder
 
     if File.exists? filename
       $partials += 1
-      puts "LOADED    : #{name}.partial"
+      puts "loaded    : #{name}.partial"
       f = File.open(filename, 'rb')
       # _partial_ is the var where the result is stored, since we're inside a ERB.new already!
       # The rand() was added in case partials contain partials themselves too
@@ -88,7 +88,7 @@ module Builder
       f.close
       result = page.result
     else
-      puts "ERROR     : #{filename}"
+      puts "error     : #{filename}"
       result = ""
     end
     result
@@ -106,14 +106,14 @@ module Builder
     end
 
     sources.each do |source|
-      puts "\nCOMPILING : #{source}"
+      puts "\ncompiling : #{source}"
       f = File.open(source, 'rb')
       page = ERB.new(f.read)
       f.close
       write_output source, page.result
     end
 
-    puts "\nDONE      : Compiled #{sources.size} sources w/ #{$partials} partials."
+    puts "\ndone      : Compiled #{sources.size} sources w/ #{$partials} partials."
   end
 end
 
@@ -209,7 +209,7 @@ exit unless Options::valid_options?
 
 puts ">>> Watching #{$settings[:root]}/#{$settings[:watched_files]}"
 puts ">>> Check your slideshow at http://#{$settings[:binding]}:#{$settings[:port]}/index.html"
-puts ">>> Your slideshow will be built and refreshed automagically\n\n"
+puts ">>> Your slideshow will be built and refreshed automagically\n"
 
 # Launch the watcher
 Thread.new do

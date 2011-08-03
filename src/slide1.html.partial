@@ -1,32 +1,38 @@
-<div class="slide-body">
-  <h1>slideshow.html</h1>
-  <h2><em>yet another</em><br>HTML5 Presentation Assembler</h2>
-</div>
+<section class="cover">
+  <div class="stripes"></div>
 
-<style>
-  #slide1 {
-    background: url('<%= @root %>/images/bgd.png') repeat;
-  }
-  #slide1 .slide-body {
-    text-align: center;
-    padding-top: 170px;
-  }
-  #slide1 h1 {
-    font-size: 82pt;
-    letter-spacing: -3px;
-    border-bottom: 10px dotted black;
-    display: inline;
-  }
-  #slide1 h2 {
-    padding-top: 70px;
-    font-size: 30pt;
-  }
-  #slide1 h2 em {
-    font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-    font-size: 38pt;
-  }
-  nav.slide1 {
-    color: black;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
-  }
-</style>
+  <hgroup>
+    <h1>slideshow.html</h1>
+    <h2><span class="serif">yet another</span> HTML5 Presentation Assembler</h2>
+  </hgroup>
+
+  <style scoped>
+    #slide1 .stripes {
+      height: 270px;
+    }
+    #slide1 h1 {
+      font-size: 105px;
+      color: #111;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 0 rgba(255, 255, 255, 0.3), 0 3px 0 rgba(255, 255, 255, 0.3);
+      background: url('<%= @root %>/images/logo.svg') 0px 33px no-repeat;
+      height: 95px;
+      padding: 0 0 0 115px;
+      border: none;
+      display: inline;
+      letter-spacing: -5px;
+      -webkit-transition: .2s all linear;
+    }
+    #slide1 h2 {
+      font-size: 32px;
+      color: #464655;
+      text-shadow: 0 1px 1px #fff;
+      line-height: 25px;
+      margin-top: 10px;
+    }
+    #slide1 h2 .serif {
+      font-size: 40px;
+      padding-right: 5px;
+      font-style: italic;
+    }
+  </style>
+</section>

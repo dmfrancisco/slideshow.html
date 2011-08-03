@@ -1,0 +1,23 @@
+<section>
+  <div class="content">
+    <div class="gap"></div>
+
+    <p>Just do like if you were <mark>making a web page</mark></p>
+
+    <div class="gap"></div>
+
+    <p class="action">Then get your remote control <span class="action">
+      <span class="serif">&</span> go <mark>fullscreen</mark>
+    </span></p>
+  </div>
+
+  <style scoped>
+    #slide6 p {
+      font-size: 50px;
+    }
+    #slide6 .serif {
+      font-family: 'Crimson Text', 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-style: italic;
+    }
+  </style>
+</section>

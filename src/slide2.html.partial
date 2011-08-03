@@ -1,13 +1,46 @@
-<div class="slide-body">
+<section>
   <h1>What is slideshow.html?</h1>
 
-  <p><strong>slideshow.html</strong> is the resulting file of running <code>./watch</code> on your terminal.</p>
-  <p><strong>watch</strong> is a ruby script that will monitor a source folder.</p>
-  <p>This source folder contains:</p>
-  <ul>
-    <li class="action">A master.html file where you set the title and other configurations</li>
-    <li class="action">One slide&lt;N&gt;.html.partial file per slide</li>
-    <li class="action">CSS, JavaScript, images and other files you may want to add to your presentation</li>
-  </ul>
-  <p class="action"><strong>slideshow.html</strong> is just a compiled file with all this information.</p>
-</div>
+  <div class="content">
+    <p class="action">
+      <mark>slideshow.html</mark> is the result of running <code>./watch</code> on your terminal
+    </p>
+    <p class="action"><mark>watch</mark> is a ruby script that monitors a folder</p>
+
+    <div class="gap"></div>
+
+    <p class="action">This folder contains:</p>
+    <ul>
+      <li class="action">
+        A <span class="dotted">master.html file</span> where you set your new presentation title
+        <span class="note action">+ other optional confs</span>
+      </li>
+      <li class="action">
+        One <span class="dotted">slide<span class="serif">n</span>.html.partial</span> file for each slide
+        <span class="note action">(where you write the content of the slides)</span>
+      </li>
+      <li class="action"><span class="dotted">CSS, JS, images</span> and other assets you may want to add</li>
+    </ul>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <img src="<%= @root %>/images/arrow.png" width="75" alt="">
+      <mark>slideshow.html</mark> is just a compiled file with all these data
+    </p>
+  </div>
+
+  <style scoped>
+    #slide2 .serif {
+      font-size: 36px;
+      font-style: italic;
+    }
+    #slide2 .note {
+      padding-left: 5px;
+      font-size: 26px;
+    }
+    #slide2 img {
+      display: inline;
+    }
+  </style>
+</section>

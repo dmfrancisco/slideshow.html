@@ -1,3 +1,44 @@
-<div class="slide-body">
-  <h1>Thank you!</h1>
+<section>
+  <h1>Markup</h1>
+
+  <div class="content">
+    <p class="action">Check how this slide's code looks like:</p>
+
+<div class="highlight action">
+  <pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Example<span class="nt">&lt;/h1&gt;</span>
+
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"action"</span><span class="nt">&gt;</span>Check how this slide's code looks like:<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;pre&gt;</span>
+    ...
+  <span class="nt">&lt;/pre&gt;</span>
+
+  <span class="nt">&lt;style </span><span class="na">scoped</span><span class="nt">&gt;</span>
+    <span class="nf">#slide5</span> <span class="nt">p</span> <span class="p">{</span>
+      <span class="k">font-size</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
 </div>
+
+  </div>
+
+  <style scoped>
+    #slide4 .na { color: #929292 } /* Name.Attribute */
+    #slide4 .nt { color: #929292 } /* Name.Tag */
+    #slide4 .nf { color: #4c4a45 } /* Name.Function */
+    #slide4 .s  { color: #6BA81E } /* Literal.String */
+    #slide4 .k  { color: #4c4a45 } /* Keyword */
+    #slide4 .m  { color: #6BA81E } /* Literal.Number */
+
+    #slide4 pre {
+      background-color: #eee;
+      margin: 30px auto;
+      padding: 15px;
+
+      font-family: Monaco, Consolas, "Lucida Console", monospace;
+      text-shadow: none;
+      color: #222;
+    }
+  </style>
+</section>
