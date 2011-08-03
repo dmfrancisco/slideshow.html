@@ -58,7 +58,6 @@ section {
 #toolbar {
     color: black;
     text-shadow: 0px 1px 0px #ccc;
-    font-family: "Lucida Grande";
     padding: 1px 10px;
     overflow: hidden;
     z-index: 10000;

@@ -14,13 +14,17 @@
       font-size: 105px;
       color: #111;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 0 rgba(255, 255, 255, 0.3), 0 3px 0 rgba(255, 255, 255, 0.3);
-      background: url('<%= @root %>/images/logo.svg') 0px 33px no-repeat;
       height: 95px;
       padding: 0 0 0 115px;
       border: none;
       display: inline;
       letter-spacing: -5px;
       -webkit-transition: .2s all linear;
+
+      background-image: url('<%= @root %>/images/logo.png'); /* SVG fallback explained here: http://goo.gl/7HyYZ */
+      background-image: none, url('<%= @root %>/images/logo.svg'), url('<%= @root %>/images/logo.png');
+      background-position: 0px 33px;
+      background-repeat: no-repeat;
     }
     #slide1 h2 {
       font-size: 32px;
