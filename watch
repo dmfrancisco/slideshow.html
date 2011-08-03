@@ -30,6 +30,7 @@
 #   ./watch [options]
 # (if don't have execute permission, try "ruby watch")
 #
+require 'rubygems'
 require 'optparse'
 require 'watchr'
 require 'thin'
@@ -215,7 +216,7 @@ $settings.merge!({
 @live = $settings[:live]
 
 # Simpler way of calling the "partial" method from views
-define_singleton_method(:partial) { |name| Builder::partial(name) }
+def partial(name) Builder::partial(name) end
 
 # Check if the specified options are valid
 exit unless Options::valid_options?
