@@ -88,7 +88,7 @@ module Builder
       f.close
       result = page.result
     else
-      puts "error     : #{filename}"
+      # puts "error     : #{filename}"
       result = ""
     end
     result

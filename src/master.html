@@ -21,8 +21,11 @@
 <body>
   <div id="content">
     <div id="deck">
-      <% 9.times do |i| %>
-        <%= partial "slide#{i+1}.html" %>
+      <% no = 1 %>
+      <% loop do %>
+        <%= slide = partial "slide#{no}.html" %>
+        <% break if slide.empty? %>
+        <% no += 1 %>
       <% end %>
     </div>
   </div>
