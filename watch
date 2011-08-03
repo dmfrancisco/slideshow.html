@@ -92,6 +92,9 @@ module Builder
       result = ""
     end
     result
+  rescue
+    puts "error     : #{filename}"
+    ""
   end
 
   # Build the compiled html file that includes the layout and all partials
@@ -105,15 +108,19 @@ module Builder
       sources = FileList["#{$settings[:source]}/*.*"].exclude("#{$settings[:source]}/*.partial")
     end
 
+    puts "\n"
     sources.each do |source|
-      puts "\ncompiling : #{source}"
+      puts "compiling : #{source}"
       f = File.open(source, 'rb')
       page = ERB.new(f.read)
       f.close
       write_output source, page.result
     end
 
-    puts "\ndone      : Compiled #{sources.size} sources w/ #{$partials} partials."
+    puts "done      : Compiled #{sources.size} sources w/ #{$partials} partials."
+
+  rescue
+    puts "error     : Compiling master file."
   end
 end
 
@@ -198,11 +205,11 @@ $settings.merge!({
   :root => Dir.pwd,
   :watched_files => "#{$settings[:source]}/.*",
 })
+@root = $settings[:source]
+@live = $settings[:live]
 
 # Simpler way of calling the "partial" method from views
 define_singleton_method(:partial) { |name| Builder::partial(name) }
-@root = $settings[:source]
-@live = $settings[:live]
 
 # Check if the specified options are valid
 exit unless Options::valid_options?

@@ -129,16 +129,16 @@ nav a:active {
 }
 
 /* Vertically and horizontally center the slides */
-#content{ display:table; overflow:hidden; margin:0px auto; }
-*:first-child+html #content { position:relative; }/*ie7*/
-* html #content{ position:relative; }/*ie6*/
-#deck{ display:table-cell; vertical-align: middle; overflow: visible; }
-*:first-child+html #deck{ position:absolute; top:50%; }/*ie7*/
-* html #deck{ position:absolute; top:50%; }/*ie6*/
-*:first-child+html section{ position:relative; top:-50%; }/*ie7*/
-* html section{ position:relative; top:-50%; }/*ie6*/
-html,body{ height:100%; }
-#content{ height:100%; width:465px; overflow: visible; }
+#container { display:table; overflow:hidden; margin:0px auto; }
+*:first-child+html #container { position:relative; }/*ie7*/
+* html #container { position:relative; }/*ie6*/
+#deck { display:table-cell; vertical-align: middle; overflow: visible; }
+*:first-child+html #deck { position:absolute; top:50%; }/*ie7*/
+* html #deck { position:absolute; top:50%; }/*ie6*/
+*:first-child+html section { position:relative; top:-50%; }/*ie7*/
+* html section { position:relative; top:-50%; }/*ie6*/
+html, body { height:100%; }
+#container { height:100%; width:465px; overflow: visible; }
 
 /* General Slide Styles */
 .slide h1 {
