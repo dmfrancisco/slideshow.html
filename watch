@@ -38,7 +38,7 @@ require 'rake'
 
 # Default options
 $settings = {
-  :source => 'src',
+  :source => 'slideshow',
   :master => 'master.html',
   :live => true,
   :output => 'slideshow.html',
