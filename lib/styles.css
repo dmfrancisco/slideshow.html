@@ -77,14 +77,14 @@ section {
     font-size: 18px;
     line-height: 32px;
 }
-header {
+#toolbar.top {
     position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
     right: 0;
 }
-footer {
+#toolbar.bottom {
     position: absolute;
     z-index: 2;
     bottom: 0;
