@@ -8,6 +8,7 @@
 
 Tested on Ruby 1.9.7 and 1.9.2.
 It works in the latests versions of Chrome, Safari and IE (9+).
+Firefox and Opera don't support the CSS zoom property, so slides don't resize correctly.
 
 
 ## Installation
