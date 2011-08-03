@@ -61,7 +61,12 @@ section {
     padding: 1px 10px;
     overflow: hidden;
     z-index: 10000;
-    -webkit-transition: all 300ms linear;
+
+    -moz-transition: all 0.3s ease-out; /* FF4+ */
+    -o-transition: all 0.3s ease-out; /* Opera 10.5+ */
+    -webkit-transition: all 0.3s ease-out; /* Saf3.2+, Chrome */
+    -ms-transition: all 0.3s ease-out; /* IE10? */
+    transition: all 0.3s ease-out;
 }
 #toolbar:hover {
     background: black; /* ie fallback */
