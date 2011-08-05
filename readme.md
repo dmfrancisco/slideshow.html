@@ -6,9 +6,9 @@
 
 ## Dependencies and supported browsers
 
-Tested on Ruby 1.9.7 and 1.9.2.
+Tested on Ruby 1.8.7 and 1.9.2.
 It works in the latests versions of Chrome, Safari and IE (9+).
-Firefox and Opera don't support the CSS zoom property, so slides don't resize correctly.
+Firefox and Opera don't support the CSS zoom property, so slides will not resize correctly.
 
 
 ## Installation
@@ -37,7 +37,7 @@ ruby watch
 
 The demo slideshow in the "slideshow" folder contains instructions to get you started.
 Everything inside the "slideshow" folder is specific to a presentation.
-However, what's inside the "lib" folder and the "watch" script shouldn't need to be modified.
+However, what's inside the "lib" folder and the "watch" script shouldn't be modified.
 
 
 ## Help
@@ -53,11 +53,11 @@ For more information and additional options execute:
 
 slideshow.html was based on the [HTML5 Slideshow](https://github.com/robflaherty/html-slideshow) project by Rob Flaherty. The code was extended and new features were added:
 
-* Dimensions and proportional slide resizing according to a specified ratio (for example, 1280x800)
-* Browser automatic refresh
-* Additional options (for example, hide the toolbar but keep the slide number visible)
-* Less.js support
 * The ruby script which offers support for partials and automated build
+* Dimensions and proportional slide resizing according to a specified ratio (for example, 1280x800)
+* Additional options (for example, hide the toolbar but keep the slide number visible)
+* Live.js was added (browser automatic refresh)
+* Less.js was added
 
 
 2011 David Francisco, released under the MIT license.
