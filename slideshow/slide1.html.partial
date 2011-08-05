@@ -5,12 +5,14 @@
     <h1>slideshow.html</h1>
     <h2><span class="serif">yet another</span> HTML5 Presentation Assembler</h2>
   </hgroup>
+</section>
 
-  <style scoped>
-    #slide1 .stripes {
+<style type="text/less">
+  #slide1 {
+    .stripes {
       height: 270px;
     }
-    #slide1 h1 {
+    h1 {
       font-size: 105px;
       color: #111;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 0 rgba(255, 255, 255, 0.3), 0 3px 0 rgba(255, 255, 255, 0.3);
@@ -26,17 +28,17 @@
       background-position: 0px 33px;
       background-repeat: no-repeat;
     }
-    #slide1 h2 {
+    h2 {
       font-size: 32px;
       color: #464655;
       text-shadow: 0 1px 1px #fff;
       line-height: 25px;
       margin-top: 10px;
     }
-    #slide1 h2 .serif {
+    h2 .serif {
       font-size: 40px;
       padding-right: 5px;
       font-style: italic;
     }
-  </style>
-</section>
+  }
+</style>

@@ -10,14 +10,16 @@
       <span class="serif">&amp;</span> go <mark>fullscreen</mark>
     </span></p>
   </div>
+</section>
 
-  <style scoped>
-    #slide6 p {
+<style type="text/less">
+  #slide6 {
+    p {
       font-size: 50px;
     }
-    #slide6 .serif {
+    .serif {
       font-family: 'Crimson Text', 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
       font-style: italic;
     }
-  </style>
-</section>
+  }
+</style>

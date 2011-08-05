@@ -23,13 +23,15 @@
 
     <p class="action note">(but you don't need to bother with that)</p>
   </div>
+</section>
 
-  <style scoped>
-    #slide5 .note {
+<style type="text/less">
+  #slide5 {
+    .note {
       text-align: center;
     }
-    #slide5 .gap {
+    .gap {
       height: 30px;
     }
-  </style>
-</section>
+  }
+</style>

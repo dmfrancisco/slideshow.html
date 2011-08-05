@@ -22,16 +22,18 @@
 </div>
 
   </div>
+</section>
 
-  <style scoped>
-    #slide4 .na { color: #929292 } /* Name.Attribute */
-    #slide4 .nt { color: #929292 } /* Name.Tag */
-    #slide4 .nf { color: #4c4a45 } /* Name.Function */
-    #slide4 .s  { color: #6BA81E } /* Literal.String */
-    #slide4 .k  { color: #4c4a45 } /* Keyword */
-    #slide4 .m  { color: #6BA81E } /* Literal.Number */
+<style type="text/less">
+  #slide4 {
+    .na { color: #929292 } /* Name.Attribute */
+    .nt { color: #929292 } /* Name.Tag */
+    .nf { color: #4c4a45 } /* Name.Function */
+    .s  { color: #6BA81E } /* Literal.String */
+    .k  { color: #4c4a45 } /* Keyword */
+    .m  { color: #6BA81E } /* Literal.Number */
 
-    #slide4 pre {
+    pre {
       background-color: #eee;
       margin: 30px auto;
       padding: 15px;
@@ -40,5 +42,5 @@
       text-shadow: none;
       color: #222;
     }
-  </style>
-</section>
+  }
+</style>

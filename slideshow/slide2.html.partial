@@ -29,18 +29,20 @@
       <mark>slideshow.html</mark> is just a compiled file with all these data
     </p>
   </div>
+</section>
 
-  <style scoped>
-    #slide2 .serif {
+<style type="text/less">
+  #slide2 {
+    .serif {
       font-size: 36px;
       font-style: italic;
     }
-    #slide2 .note {
+    .note {
       padding-left: 5px;
       font-size: 26px;
     }
-    #slide2 img {
+    img {
       display: inline;
     }
-  </style>
-</section>
+  }
+</style>

@@ -2,11 +2,13 @@
   <div class="stripes"></div>
 
   <h1>thank you for watching</h1>
+</section>
 
-  <style scoped>
-    #slide7 h1 {
+<style type="text/less">
+  #slide7 {
+    h1 {
       padding-top: 600px;
       border: none;
     }
-  </style>
-</section>
+  }
+</style>

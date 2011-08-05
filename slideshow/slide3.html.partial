@@ -19,13 +19,15 @@
       It even automatically refreshes the tab in your browser
     </p>
   </div>
+</section>
 
-  <style scoped>
-    #slide3 p {
+<style type="text/less">
+  #slide3 {
+    p {
       font-size: 40px;
     }
-    #slide3 .note {
+    .note {
       text-align: center;
     }
-  </style>
-</section>
+  }
+</style>
