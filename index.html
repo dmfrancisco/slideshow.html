@@ -1,0 +1,468 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="slideshow/favicon.ico"/>
+
+  <!--[if lt IE 9]>
+  <script src="lib/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- These are some core styles the slideshow app requires -->
+  <link rel="stylesheet" href="lib/styles.css" />
+
+  <!-- These are the styles you'll add to make the slides look great -->
+  <link rel="stylesheet/less" href="slideshow/styles/styles.less" />
+
+  <title>slideshow.html</title>
+</head>
+
+<body>
+  <div id="container">
+    <div id="deck">
+      
+      <section class="cover">
+  <!-- Ribbon -->
+  <a href="http://github.com/dmfrancisco/slideshow.html">
+    <img class="ribbon" alt="Fork me on GitHub"
+         src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+  </a>
+
+  <div class="stripes"></div>
+
+  <hgroup>
+    <h1>slideshow.html</h1>
+    <h2><span class="serif">yet another</span> HTML5 Presentation Assembler</h2>
+  </hgroup>
+</section>
+
+<style type="text/less">
+  #slide1 {
+    .stripes {
+      height: 270px;
+    }
+    h1 {
+      font-size: 105px;
+      color: #111;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 0 rgba(255, 255, 255, 0.3), 0 3px 0 rgba(255, 255, 255, 0.3);
+      height: 95px;
+      padding: 0 0 0 115px;
+      border: none;
+      display: inline;
+      letter-spacing: -5px;
+      -webkit-transition: .2s all linear;
+
+      background-image: url('slideshow/images/logo.png'); /* SVG fallback explained here: http://goo.gl/7HyYZ */
+      background-image: none, url('slideshow/images/logo.svg'), url('slideshow/images/logo.png');
+      background-position: 0px 33px;
+      background-repeat: no-repeat;
+    }
+    h2 {
+      font-size: 32px;
+      color: #464655;
+      text-shadow: 0 1px 1px #fff;
+      line-height: 25px;
+      margin-top: 10px;
+    }
+    h2 .serif {
+      font-size: 40px;
+      padding-right: 5px;
+      font-style: italic;
+    }
+    .ribbon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+    }
+  }
+</style>
+        
+        
+      <section>
+  <h1>What is slideshow.html?</h1>
+
+  <div class="content">
+    <p class="action">
+      <mark>slideshow.html</mark> is the result of running <code>./watch</code> on your terminal
+    </p>
+    <p class="action"><mark>watch</mark> is a ruby script that monitors a folder</p>
+
+    <div class="gap"></div>
+
+    <p class="action">This folder contains:</p>
+    <ul>
+      <li class="action">
+        A <span class="dotted">master.html file</span> where you set your new presentation title
+        <span class="note action">+ other optional confs</span>
+      </li>
+      <li class="action">
+        One <span class="dotted">slide<span class="serif">n</span>.html.partial</span> file for each slide
+        <span class="note action">(where you write the content of the slides)</span>
+      </li>
+      <li class="action"><span class="dotted">CSS, JS, images</span> and other assets you may want to add</li>
+    </ul>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <img src="slideshow/images/arrow.png" width="75" alt="">
+      <mark>slideshow.html</mark> is just a compiled file with all these data
+    </p>
+  </div>
+</section>
+
+<style type="text/less">
+  #slide2 {
+    .serif {
+      font-size: 36px;
+      font-style: italic;
+    }
+    .note {
+      padding-left: 5px;
+      font-size: 26px;
+    }
+    img {
+      display: inline;
+    }
+  }
+</style>
+
+        
+        
+      <section>
+  <h1>What is slideshow.html?</h1>
+
+  <div class="content">
+    <p>So, <span class="action">you need Ruby to create your presentation,</span></p>
+    <p style="text-align:right" class="action">but <span class="dotted">not to present</span> or publish it</p>
+    <p class="note action">(and you don't have to know anything about ruby)</p>
+
+    <div class="gap"></div>
+
+    <p class="action">Every time you make a change in one of your slides,</p>
+    <p style="text-align:right" class="action">
+      the <mark>slideshow.html</mark> file
+      <span class="dotted">gets updated</span>
+    </p>
+
+    <p class="note action">
+      <img src="slideshow/images/arrow-2.png" width="80" alt="">
+      It even automatically refreshes the tab in your browser
+    </p>
+  </div>
+</section>
+
+<style type="text/less">
+  #slide3 {
+    p {
+      font-size: 40px;
+    }
+    .note {
+      text-align: center;
+    }
+  }
+</style>
+
+        
+        
+      <section>
+  <h1>Markup</h1>
+
+  <div class="content">
+    <p class="action">Check how this slide's code looks like:</p>
+
+<div class="highlight action">
+  <pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Example<span class="nt">&lt;/h1&gt;</span>
+
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"action"</span><span class="nt">&gt;</span>Check how this slide's code looks like:<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;pre&gt;</span>
+    ...
+  <span class="nt">&lt;/pre&gt;</span>
+
+  <span class="nt">&lt;style </span><span class="na">scoped</span><span class="nt">&gt;</span>
+    <span class="nf">#slide5</span> <span class="nt">p</span> <span class="p">{</span>
+      <span class="k">font-size</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+</div>
+
+  </div>
+</section>
+
+<style type="text/less">
+  #slide4 {
+    .na { color: #929292 } /* Name.Attribute */
+    .nt { color: #929292 } /* Name.Tag */
+    .nf { color: #4c4a45 } /* Name.Function */
+    .s  { color: #6BA81E } /* Literal.String */
+    .k  { color: #4c4a45 } /* Keyword */
+    .m  { color: #6BA81E } /* Literal.Number */
+
+    pre {
+      background-color: #eee;
+      margin: 30px auto;
+      padding: 15px;
+
+      font-family: Monaco, Consolas, "Lucida Console", monospace;
+      text-shadow: none;
+      color: #222;
+    }
+  }
+</style>
+
+        
+        
+      <section>
+  <h1>In short</h1>
+
+  <div class="content">
+    <p style="text-align: center" class="action">
+      <span class="important">
+        Write your slides in <strong>HTML</strong> and style them with <strong>CSS</strong> (or <strong>Less</strong>)
+      </span>
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">The master slide and a directory called <code>./lib</code> contain all what's needed to:</p>
+    <ul>
+      <li class="action"><mark>convert your slides</mark> into a presentation</li>
+      <li class="action">
+        advance through the presentation with a <mark>mouse</mark>, <mark>keyboard</mark> or <mark>finger-swipe</mark>
+      </li>
+      <li class="action">render <mark>animations</mark> and <mark>handle window resizing</mark></li>
+    </ul>
+
+    <div class="gap"></div>
+
+    <p class="action note">(but you don't need to bother with that)</p>
+  </div>
+</section>
+
+<style type="text/less">
+  #slide5 {
+    .note {
+      text-align: center;
+    }
+    .gap {
+      height: 30px;
+    }
+  }
+</style>
+
+        
+        
+      <section>
+  <div class="content">
+    <div class="gap"></div>
+
+    <p>Just do like if you were <mark>making a web page</mark></p>
+
+    <div class="gap"></div>
+
+    <p class="action">Then get your remote control <span class="action">
+      <span class="serif">&amp;</span> go <mark>fullscreen</mark>
+    </span></p>
+  </div>
+</section>
+
+<style type="text/less">
+  #slide6 {
+    p {
+      font-size: 50px;
+    }
+    .serif {
+      font-family: 'Crimson Text', 'Baskerville', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-style: italic;
+    }
+  }
+</style>
+
+        
+        
+      <section class="cover">
+  <div class="stripes"></div>
+
+  <h1>thank you for watching</h1>
+</section>
+
+<style type="text/less">
+  #slide7 {
+    h1 {
+      padding-top: 600px;
+      border: none;
+    }
+  }
+</style>
+
+        
+        
+      <section class="cover">
+  <div class="stripes"></div>
+
+  <h1>This wouldn’t be possible without the following Open Source projects</h1>
+
+  <div class="content">
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>HTML5 Slideshow</strong>
+      <span class="link"><a href="http://www.ravelrumba.com/blog/html5-slideshow/">goo.gl/CeD4Q</a></span>
+      <br /><span class="serif"><em>by</em></span> Rob Flaherty
+      <img src="slideshow/images/arrow-3.png" alt="" height="30">
+      <span class="note">the main library used for slideshow.html</span>
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>Live.js</strong>
+      <span class="link"><a href="http://livejs.com/">livejs.com</a></span><br />
+      <span class="serif"><em>by</em></span> Martin Kool
+    </p>
+
+    <div class="gap"></div>
+
+    <p class="action">
+      <strong>Watchr</strong>
+      <span class="link"><a href="http://rubygems.org/gems/watchr/">goo.gl/QQUUk</a></span><br />
+      <span class="serif"><em>by</em></span> Martin Aumont (and others)
+    </p>
+  </div>
+</section>
+
+<style type="text/less">
+  /* Set of useful mixins (lesselements.com/) */
+  @import "slideshow/styles/elements";
+
+  #slide8 {
+    h1 {
+      font-size: 40px;
+    }
+    &.cover {
+      text-align: left;
+      vertical-align: middle;
+    }
+    .serif {
+      padding-right: 10px;
+    }
+    .link {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-left: 10px;
+      font: 20px Monaco, Consolas, "Lucida Console", monospace;
+      background: #F9C006;
+      text-shadow: none;
+      .box-shadow(1px 1px 1px #888);
+      .rounded(20px);
+    }
+    .link a, .link a:visited, .link a:hover {
+      color: #444;
+      text-decoration: none;
+    }
+    .note {
+      color: #5d5d5d;
+    }
+    img {
+      display: inline;
+    }
+  }
+</style>
+
+        
+        
+      <section class="cover">
+  <div class="stripes"></div>
+
+  <h1><a href="http://slideshow.dmfranc.com/">slideshow.dmfranc.com</a></h1>
+</section>
+
+<style type="text/less">
+  #slide9 {
+    h1 {
+      padding-top: 600px;
+      border: none;
+    }
+    a, a:visited, a:hover {
+      color: #000;
+    }
+  }
+</style>
+
+        
+        
+      
+        
+    </div>
+  </div>
+
+  <!-- You can change the class "bottom to "top" -->
+  <header id="toolbar" class="bottom">
+    <h1 class="hide">An example slideshow</h1>
+    <nav>
+      <ul>
+        <!-- Add the class "hide" if you want an element to be visible only on mouseover -->
+        <li class="hide">
+          <a id="prev-btn" title="Previous slide">&#9664;</a>
+        </li>
+        <li>
+          <span id="slide-number"></span>/<span id="slide-total"></span>
+        </li>
+        <li class="hide">
+          <a id="next-btn" title="Next Slide">&#9654;</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <noscript>
+    <div class="warning">You should enable javascript to access this website.</div>
+  </noscript>
+
+  <script src="lib/jquery-1.5.2.min.js"></script>
+  <script src="lib/jquery.jswipe-0.1.2.min.js"></script>
+  <script src="lib/less-1.1.3.min.js"></script>
+  <script src="lib/html-slides.js"></script>
+  
+
+  <script>
+    // Block access from older browsers (you probably want to remove this; keep in mind that there're still some issues)
+    if ($("html").is('.ie6, .ie7, .ie8')) {
+        $("body").html("<div class='warning'>We are sorry but this website does not render properly in your browser" +
+              " for now. <br/>If possible, try to access it using a different browser, such as <a" +
+              " href='http://google.com/chrome/'>Google Chrome</a>, <a " +
+              " href='http://mozilla.com/firefox/'>Mozilla Firefox 4+</a> or <a " +
+              " href='http://beautyoftheweb.com/'>Internet Explorer 9+</a>.<br/></div>");
+    } else {
+        // Do our business when the DOM is ready for us
+        $(function() {
+          // You can trigger Javascript based on the slide number like this:
+          $('html').bind('newSlide', function(e, id) {
+            switch(id) {
+              case 2:
+                console.log('This is the second slide.');;
+                break;
+              case 3:
+                console.log('Hello, third slide.');
+                break;
+            }
+          });
+
+          // Init!
+          htmlSlides.init();
+
+          // You can specify the width to height ratio like this:
+          // htmlSlides.init({ slideWidth: 1280, slideHeight: 800 });
+        });
+    }
+  </script>
+</body>
+</html>
