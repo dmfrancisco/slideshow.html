@@ -47,6 +47,10 @@ For more information and additional options execute:
 ./watch --help
 ```
 
+### Do I need a web server to view my presentation?
+
+Live.js and less.js currently won't work if you’re using Chrome and the path to your slideshow starts with "file://" due to a known Chrome issue. If you're not using either of those, then you don't need a web server.
+
 
 ## Origin
 
