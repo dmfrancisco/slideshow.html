@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Maven+Pro:500|Crimson+Text:400italic|Calligraffitti);
+
+/* The same fonts as specified above, but intended for offline usage (optional) */
+@font-face {
+  font-family: 'Throw My Hands Up in the Air';
+  src: url('../fonts/ThrowMyHandsUpintheAir.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Droid Sans';
+  src: url('../fonts/DroidSans-Regular.ttf') format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Maven Pro';
+  src: url('../fonts/MavenPro-Medium.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Crimson Text';
+  src: url('../fonts/CrimsonText-Italic.ttf') format("truetype");
+  font-style: italic;
+}
