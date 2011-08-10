@@ -1,10 +1,4 @@
 <section class="cover">
-  <!-- Ribbon -->
-  <a href="http://github.com/dmfrancisco/slideshow.html">
-    <img class="ribbon" alt="Fork me on GitHub"
-         src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-  </a>
-
   <div class="stripes"></div>
 
   <hgroup>
@@ -45,12 +39,6 @@
       font-size: 40px;
       padding-right: 5px;
       font-style: italic;
-    }
-    .ribbon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      border: 0;
     }
   }
 </style>

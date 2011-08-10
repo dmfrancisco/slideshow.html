@@ -1,4 +1,9 @@
 <section class="cover">
+  <!-- Ribbon -->
+  <a href="http://github.com/dmfrancisco/slideshow.html">
+    <img class="ribbon" alt="Fork me on GitHub" src="<%= @root %>/images/ribbon.png">
+  </a>
+
   <div class="stripes"></div>
 
   <h1><a href="http://slideshow.dmfranc.com/">slideshow.dmfranc.com</a></h1>
@@ -12,6 +17,12 @@
     }
     a, a:visited, a:hover {
       color: #000;
+    }
+    .ribbon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
     }
   }
 </style>
