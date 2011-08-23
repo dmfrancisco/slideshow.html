@@ -49,11 +49,13 @@ For more information and additional options execute:
 
 ### Do I need a web server to view my presentation?
 
-Live.js and less.js currently won't work if you’re using Chrome and the path to your slideshow starts with "file://" due to a known Chrome issue. If you're not using either of those, then you don't need a web server.
+Live.js and less.js currently won't work if you’re using Chrome and the path to your slideshow starts with "file://" due to a known Chrome issue.  
+If you're not using either of those, then you don't need a web server.
 
 ### My presentation keeps flashing. What should I do?
 
-You are probably using a tablet or you are offline and some of the contents you included in your presentation are not locally accessible. This is caused by live.js. You should use the -n option to avoid it:
+You are probably using a tablet or you are offline and some of the contents you included in your presentation are not locally accessible.  
+This is caused by live.js. You should use the -n option to avoid it:
 
 ```
 ./watch --nolivejs
@@ -61,12 +63,12 @@ You are probably using a tablet or you are offline and some of the contents you 
 
 ### Want to control your HTML presentation with Apple Remote?
 
-Check this project: [github.com/danielwestendorf/HTML-Slide-Presenter](https://github.com/danielwestendorf/HTML-Slide-Presenter).
+Check this project: [github.com/danielwestendorf/HTML-Slide-Presenter](https://github.com/danielwestendorf/HTML-Slide-Presenter).  
 It's a MacRuby application to display your HTML slideshows fullscreen with Apple Remote Support.
 
 ### I need more flexibility regarding transitions and animations
 
-Check this project: [github.com/imakewebthings/deck.js](https://github.com/imakewebthings/deck.js).
+Check this project: [github.com/imakewebthings/deck.js](https://github.com/imakewebthings/deck.js).  
 It's very flexible. However, slides don't scale in proportion and it works with a single html file (no partials).
 
 
