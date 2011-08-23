@@ -59,6 +59,16 @@ You are probably using a tablet or you are offline and some of the contents you 
 ./watch --nolivejs
 ```
 
+### Want to control your HTML presentation with Apple Remote?
+
+Check this project: [github.com/danielwestendorf/HTML-Slide-Presenter](https://github.com/danielwestendorf/HTML-Slide-Presenter).
+It's a MacRuby application to display your HTML slideshows fullscreen with Apple Remote Support.
+
+### I need more flexibility regarding transitions and animations
+
+Check this project: [github.com/imakewebthings/deck.js](https://github.com/imakewebthings/deck.js).
+It's very flexible. However, slides don't scale in proportion and it works with a single html file (no partials).
+
 
 ## Origin
 
