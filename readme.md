@@ -1,6 +1,7 @@
 ![slideshow.html](http://dmfranc.com/assets/slideshow.png)
 
-[View the demo](http://dmfrancisco.github.com/slideshow.html/)
+[Demonstration](http://dmfrancisco.github.com/slideshow.html/)  
+[Video](http://vimeo.com/davidfrancisco/slideshow/)
 
 
 ## Dependencies and supported browsers
