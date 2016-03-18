@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ![slideshow.html](http://dmfranc.com/assets/slideshow.png)
 
 [Demonstration](http://dmfrancisco.github.com/slideshow.html/)  
